@@ -3,7 +3,8 @@ package renameThisPackage;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("What do I dooooooooooooooooooooooo");
+		System.out.println("SpyGame");
+		//Planned use of Observer, Adapter and Factory Method
 	}
 
 }
