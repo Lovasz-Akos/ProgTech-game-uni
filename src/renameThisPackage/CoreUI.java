@@ -105,7 +105,7 @@ public class CoreUI {
 		btnTemp_AddItem.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		btnTemp_AddItem.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnTemp_AddItem.setBackground(Color.GRAY);
-		btnTemp_AddItem.setBounds(270, 11, 125, 49);
+		btnTemp_AddItem.setBounds(270, 523, 28, 27);
 		coreFrame.getContentPane().add(btnTemp_AddItem);
 		
 		JButton btnTemp_goto = new JButton("Cshuuz");
@@ -113,9 +113,12 @@ public class CoreUI {
 			public void actionPerformed(ActionEvent arg0) {
 				String where = listHeist.getSelectedValue();
 				if (where == null) {
-					where = "Nem választottál utat";
+					JOptionPane.showMessageDialog(null, "Nem választottál uticélt");
 				}
-				JOptionPane.showMessageDialog(null, "goto: " + where);
+				else {
+					
+				}
+				
 			}
 		});
 		btnTemp_goto.setToolTipText("Closes the program.");
@@ -123,7 +126,7 @@ public class CoreUI {
 		btnTemp_goto.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		btnTemp_goto.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnTemp_goto.setBackground(Color.GRAY);
-		btnTemp_goto.setBounds(270, 71, 125, 49);
+		btnTemp_goto.setBounds(270, 11, 125, 49);
 		coreFrame.getContentPane().add(btnTemp_goto);
 		
 		
