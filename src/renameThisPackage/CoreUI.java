@@ -110,13 +110,13 @@ public class CoreUI {
 		
 		JButton btnTemp_goto = new JButton("Cshuuz");
 		btnTemp_goto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				String where = listHeist.getSelectedValue();
 				if (where == null) {
-					JOptionPane.showMessageDialog(null, "Nem választottál uticélt");
+					JOptionPane.showMessageDialog(null, "No destination selected");
 				}
 				else {
-					
+					GearChoiceWindow gcw = new GearChoiceWindow();
 				}
 				
 			}
@@ -130,7 +130,9 @@ public class CoreUI {
 		coreFrame.getContentPane().add(btnTemp_goto);
 		
 		
-		
+		coreFrame.validate();
+		coreFrame.repaint();
+		coreFrame.setVisible(true);
 		
 		
 		

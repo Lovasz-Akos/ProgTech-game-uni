@@ -7,14 +7,16 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import renameThisPackage.Gear;
+import java.awt.Dimension;
 
-public class GearChoiceWindow {
+public class GearChoiceWindow{
 
 	private JFrame frmGearChoiceWindow;
 
@@ -45,14 +47,18 @@ public class GearChoiceWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
+		
 		frmGearChoiceWindow = new JFrame();
+		frmGearChoiceWindow.setSize(new Dimension(141, 194));
+		frmGearChoiceWindow.setResizable(false);
 		frmGearChoiceWindow.setTitle("Gear Choice Window");
 		frmGearChoiceWindow.getContentPane().setBackground(Color.DARK_GRAY);
 		frmGearChoiceWindow.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(10, 11, 264, 89);
+		panel.setBounds(20, 11, 103, 99);
 		frmGearChoiceWindow.getContentPane().add(panel);
 		
 		DefaultListModel<String> listModelGear = new DefaultListModel<String>();
@@ -68,20 +74,40 @@ public class GearChoiceWindow {
 		panel.add(list);
 		
 		JButton btnGearChoice = new JButton("Cshuuz");
-		btnGearChoice.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
+		
+		
 		btnGearChoice.setToolTipText("Closes the program.");
 		btnGearChoice.setForeground(Color.WHITE);
 		btnGearChoice.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		btnGearChoice.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnGearChoice.setBackground(Color.GRAY);
-		btnGearChoice.setBounds(89, 110, 105, 37);
+		btnGearChoice.setBounds(28, 126, 88, 27);
 		frmGearChoiceWindow.getContentPane().add(btnGearChoice);
-		frmGearChoiceWindow.setBounds(100, 100, 300, 197);
+		frmGearChoiceWindow.setBounds(100, 100, 150, 193);
 		frmGearChoiceWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		
+		btnGearChoice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if (list.getSelectedValue() == null) {
+					JOptionPane.showMessageDialog(null, "No gear chosen!");
+				}
+				else {
+					GearTypes chosen = Enum.valueOf(GearTypes.class, list.getSelectedValue());
+					//#TODO set the gear type to the one chosen
+				}
+				
+				
+			}
+		});
+		
+		frmGearChoiceWindow.validate();
+		frmGearChoiceWindow.repaint();
+		frmGearChoiceWindow.setVisible(true);
+
 	}
+	
+	
 
 }
