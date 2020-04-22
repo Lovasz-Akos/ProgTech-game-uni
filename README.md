@@ -38,4 +38,7 @@ Unit test
     Player inventory:
         test for adding and removing items
         test for adding and removing money from the player's account
+        
+    Gear choice:
+        test for the success rate impact of gear sets
     
