@@ -118,7 +118,6 @@ public class CoreUI {
 				else {
 					GearChoiceWindow gcw = new GearChoiceWindow();
 				}
-				
 			}
 		});
 		btnTemp_goto.setToolTipText("Closes the program.");
@@ -128,13 +127,9 @@ public class CoreUI {
 		btnTemp_goto.setBackground(Color.GRAY);
 		btnTemp_goto.setBounds(270, 11, 125, 49);
 		coreFrame.getContentPane().add(btnTemp_goto);
-		
-		
+			
 		coreFrame.validate();
 		coreFrame.repaint();
 		coreFrame.setVisible(true);
-		
-		
-		
 	}
 }
