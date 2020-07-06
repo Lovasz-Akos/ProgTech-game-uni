@@ -1,3 +1,7 @@
+Project scrapped for now
+
+
+
 Thief Game
 
 A thief "simulator" where you can use a GUI to plan and execute heists
